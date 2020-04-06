@@ -6,7 +6,7 @@
 	"scripts": {
 		"sass": "node-sass src/scss/ -o dist/css",
 		"sass-watch": "node-sass -w src/scss/ -o dist/css --recursive",
-		"pug": "pug src/pug --out dist -P",
+		"pug": "pug src/pug/*.pug --out dist -P",
 		"pug-watch": "pug src/pug --out dist -P -w"
 	},
 	"keywords": [],
