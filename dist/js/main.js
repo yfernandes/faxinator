@@ -62,12 +62,6 @@ const dateInput = document.querySelector("#startDate");
 function selectDate(e) {
 	e.preventDefault();
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-	var elems = document.querySelectorAll(".datePicker");
-	var instances = M.Datepicker.init(elems);
-});
-
 // Load all event listeners
 function loadEventListeners() {
 	// Add Task Event
