@@ -1,0 +1,41 @@
+/* [CONTAINER] */
+.picker {
+	max-width: 350px;
+	background: #eee;
+	padding: 10px;
+}
+
+/* [MONTH + YEAR] */
+.picker-m,
+.picker-y {
+	width: 50%;
+	padding: 5px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+/* [DAY] */
+.picker-d table {
+	color: #555;
+	border-collapse: separate;
+	width: 100%;
+	margin-top: 10px;
+}
+.picker-d table td {
+	width: 14.28%; /* 7 equal columns */
+	padding: 5px;
+	text-align: center;
+}
+/* SUN > MON */
+.picker-d-h td {
+	font-weight: bold;
+}
+/* Blank dates */
+.picker-d-b {
+	background: #ddd;
+}
+/* Dates */
+.picker-d-d:hover {
+	cursor: pointer;
+	background: #ffdad6;
+}

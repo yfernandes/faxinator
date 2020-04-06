@@ -1,16 +1,21 @@
 {
-  "name": "faxina",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "googleapis": "^27.0.0",
-    "promise": "^8.0.3"
-  }
+	"name": "faxina",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"sass": "node-sass src/scss/ -o dist/css",
+		"sass-watch": "node-sass -w src/scss/ -o dist/css --recursive",
+		"pug": "pug src/pug --out dist -P",
+		"pug-watch": "pug src/pug --out dist -P -w"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"googleapis": "^27.0.0",
+		"node-sass": "^4.13.1",
+		"promise": "^8.0.3",
+		"pug": "^2.0.4"
+	}
 }

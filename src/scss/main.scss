@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "config";
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	background-color: $bg-color;
+}
+
+.container {
+	max-width: $website-width;
+	margin: auto;
+	overflow: hidden;
+}
+
+.section-title {
+	background-color: $main-color;
+	color: $white-color;
+	margin-top: 8rem;
+	text-align: center;
+
+	// font-size: 2rem;
+	// display: block;
+	padding: 0.5rem 0;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+// Buttons
+
+%btn-shared {
+	display: inline-block;
+	padding: 0.8rem 2rem;
+	transition: all 0.5s;
+	border: none;
+	cursor: pointer;
+}
+.btn {
+	&-main {
+		@extend %btn-shared;
+		color: #333;
+		background-color: $bg-color;
+	}
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+	background-color: $main-color;
+}
+
+// Header
+#header {
+	background-color: $main-color;
+	// Nav
+	#logo {
+		height: 50px;
+		// height: 70px;
+		color: #fff;
+		text-transform: uppercase;
+
+		margin: 0;
+	}
+
+	#main-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+
+		// ul {
+		// 	display: flex;
+		// }
+
+		// li {
+		// 	padding: 1rem 1.5rem;
+		// }
+
+		// a {
+		// 	text-decoration: none;
+		// 	color: #fff;
+		// 	text-transform: uppercase;
+		// 	border-bottom: 3px transparent solid;
+		// 	padding-bottom: 0.5rem;
+		// 	transition: border-color 0.5s;
+
+		// &:hover {
+		// 	border-color: $medium-color;
+		// }
+
+		// &.current {
+		// 	border-color: $main-color;
+		// }
+		// }
+	}
+}
+
+// Date
+@import "components/datepicker";
+#date {
+	date-container {
+		background-color: $white-color;
+		display: grid;
+		padding: 1.5rem 0;
+
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		justify-items: center;
+
+		.start {
+			h4 {
+				margin-bottom: 1rem;
+			}
+			#input-inline {
+				// display: none;
+			}
+
+			.picker {
+				border-radius: 10px;
+			}
+		}
+		.days {
+			.buttons {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.5rem;
+				padding: 1.5rem 0;
+			}
+		}
+	}
+}
+
+// Members
+
+#members {
+	.members-container {
+		background-color: $white-color;
+		min-height: 23rem;
+
+		text-align: center;
+
+		.form-group {
+			padding: 1rem;
+
+			label {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			input {
+				margin-bottom: 0.7rem;
+			}
+		}
+	}
+}
+
+// Tasks
+#task {
+	.task-container {
+		background-color: $white-color;
+		height: 23rem;
+
+		text-align: center;
+
+		.form-group {
+			padding: 1rem;
+
+			label {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			input {
+				margin-bottom: 0.7rem;
+			}
+		}
+	}
+}
+
+// Table
+/* 
+<div class="limiter"> --> Becomes <section id="section-table" class="limiter">
+  <div class="container-table100"> --> Becomes 'table-container'
+    <div class="wrap-table100"> --> Becomes 'table-wrap'
+      <div class="table">
+        <div class="row header"> 
+        <div class="row "> 
+      
+*/
+
+.limiter {
+	width: 100%;
+	margin: 0 auto;
+
+	// Previously ".container-table100"
+	.table-container {
+		width: 100%;
+		min-height: 23rem;
+		// background: $bg-color;
+
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 33px 30px;
+
+		// Previously "wrap-table100"
+		.table-wrap {
+			width: $website-width;
+			border-radius: 10px;
+			overflow: hidden;
+
+			.table {
+				width: 100%;
+				display: table;
+				margin: 0;
+
+				.row {
+					display: table-row;
+					background: $white-color;
+				}
+
+				.row.header {
+					color: $white-color;
+					background: $main-color;
+				}
+
+				.cell {
+					display: table-cell;
+				}
+
+				.row .cell {
+					font-size: 15px;
+					color: $text-color;
+					line-height: 1.2;
+					font-weight: unset !important;
+
+					padding-top: 20px;
+					padding-bottom: 20px;
+					border-bottom: 1px solid $border-color;
+				}
+
+				.row.header .cell {
+					font-size: 18px;
+					color: $white-color;
+					line-height: 1.2;
+					font-weight: unset !important;
+
+					padding-top: 19px;
+					padding-bottom: 19px;
+				}
+
+				.row .cell {
+					width: 160px;
+					padding-left: 40px;
+					align-self: center;
+				}
+
+				.row .cell:nth-child(1) {
+					padding-left: 40px;
+				}
+
+				.table,
+				.row {
+					width: 100% !important;
+				}
+
+				.row:hover {
+					background-color: $row-color-hover;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+@import "media";

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Faxinator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- MATERIALIZE Compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <header id="header">
+      <nav id="main-nav"><img id="logo" src="./img/LogoMiniRedonda-02.png" alt="Logo república 4 coisas">
+        <h1>Faxinator</h1>
+        <p></p>
+      </nav>
+    </header>
+    <!-- Section: Date Input-->
+    <section id="date">
+      <div class="container">
+        <h2 class="section-title">Datas</h2>
+        <div class="date-container">
+          <!-- Date Picker-->
+          <div class="start">
+            <h4 class="text-center">Quando comeca?
+              <input class="datePicker" id="startDate" type="text">
+            </h4>
+          </div>
+          <!-- Days Buttons-->
+          <div class="days">
+            <h4 class="text-center">Quais dias?</h4>
+            <div class="buttons">
+              <button class="btn-main">Domingo</button>
+              <button class="btn-main">Segunda</button>
+              <button class="btn-main">Terca</button>
+              <button class="btn-main">Quarta</button>
+              <button class="btn-main">Quinta</button>
+              <button class="btn-main">Sexta</button>
+              <button class="btn-main">Sabado</button>
+              <button class="btn-main">Todos</button>
+              <button class="btn-main">Alternado</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Members Input-->
+    <section id="members">
+      <div class="container">
+        <div class="section-title">
+          <h2>Participantes</h2>
+        </div>
+        <div class="members-container">
+          <form id="members-form">
+            <div class="form-group">
+              <label for="name">Adicionar Participante</label>
+              <input id="member-name" type="text" name="name" placeholder="Nome da criatura"><br>
+              <input class="btn-main" type="submit" value="Adicionar">
+            </div>
+          </form>
+          <div class="members-list">
+            <div class="member-unique">Bento</div>
+            <div class="member-unique">Bento</div>
+            <div class="member-unique">Bento</div>
+            <div class="member-unique">Bento</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Tasks Input-->
+    <section id="task">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tarefas</h2>
+        </div>
+        <div class="task-container">
+          <form>
+            <div class="form-group">
+              <label for="name">Adicionar Tarefa</label>
+              <input id="task-name" type="text" name="name" placeholder="Nome da tragedia"><br>
+              <button class="btn-main">Adicionar</button>
+            </div>
+            <div class="task-list">
+              <div class="task-unique">Cozinha</div>
+              <div class="task-unique">Banheiro</div>
+              <div class="task-unique">Sala</div>
+              <div class="task-unique">Lavanderia</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Result Table-->
+    <section class="limiter" id="table">
+      <div class="table-container">
+        <div class="table-wrap">
+          <div class="table">
+            <div class="row header">
+              <div class="cell">Data</div>
+              <div class="cell">Cozinha</div>
+              <div class="cell">Sala</div>
+              <div class="cell">Banheiro Social</div>
+              <div class="cell">Copa e Corredor</div>
+              <div class="cell">Banheiro Suite</div>
+              <div class="cell">Lavanderia</div>
+              <div class="cell">Area Externa</div>
+            </div>
+            <!-- Example Row-->
+            <div class="row">
+              <div class="cell" data-title="Date">01/01</div>
+              <div class="cell" data-title="Date">Mom&ocirc;</div>
+              <div class="cell" data-title="Date">Piu-Piu</div>
+              <div class="cell" data-title="Date">Bento</div>
+              <div class="cell" data-title="Date">Vlad</div>
+              <div class="cell" data-title="Date">Naue</div>
+              <div class="cell" data-title="Date">Cecilia</div>
+              <div class="cell" data-title="Date">Sequela</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
