@@ -1,0 +1,20 @@
+// Date
+#date {
+	.date-container {
+		background-color: $white-color;
+		height: 15rem;
+
+		padding: 1.5rem;
+
+		.start {
+			h4 {
+				margin-bottom: 1rem;
+			}
+		}
+		.days {
+			.buttons {
+				padding: 1.5rem 0;
+			}
+		}
+	}
+}
