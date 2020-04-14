@@ -45,7 +45,7 @@ export default {
 
 		this.frequency = newFreq;
 
-		console.log(this.frequency);
+		// console.log(this.frequency);
 
 		// Persist State to Local Storage
 		this.storeFrequencyToLocalStorage(this.frequency);
@@ -75,16 +75,15 @@ export default {
 	},
 
 	updateFrequencyDOM(frequency) {
-		console.log("Updating DOM with:", frequency);
+		// console.log("Updating DOM with:", frequency);
 
 		// Removing Btn Active
-		Array(this.daysButtonsEl).forEach((element) => {
-			element.classList.remove("btn-active");
-			if (element.classList.contains("btn-active")) {
-			}
-		});
 
 		for (let i = 0; i < 9; i++) {
+			if (this.daysButtonsEl.children[i].classList.contains("btn-active")) {
+				this.daysButtonsEl.children[i].classList.remove("btn-active");
+			}
+
 			if (
 				this.daysButtonsEl.children[i].textContent ===
 					this.frequency[i].weekDay &&

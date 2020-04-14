@@ -12,10 +12,8 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"dependencies": {
-		"googleapis": "^27.0.0",
+	"devDependencies": {
 		"node-sass": "^4.13.1",
-		"promise": "^8.0.3",
 		"pug": "^2.0.4"
 	}
 }
