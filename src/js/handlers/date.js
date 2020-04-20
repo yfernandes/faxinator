@@ -67,7 +67,7 @@ export default {
 			console.log("No Previous Frequency Found, using default!");
 			loadedFrequency = this.defaultFrequency;
 		} else {
-			console.log("Previous Frequency Found!");
+			// console.log("Previous Frequency Found!");
 			loadedFrequency = JSON.parse(localStorage.getItem("frequency"));
 		}
 
@@ -100,6 +100,21 @@ export default {
 		console.log("Got to Date input, startDate: ", this.startDate);
 	},
 
-	// loadFrequencyFromStorage,
-	// updateFrequencyDOM,
+	getFrequency() {
+		let freqString = [];
+		this.frequency.forEach((element) => {
+			if (element.active) {
+				freqString.push(element.weekDay);
+			}
+		});
+		return freqString;
+	},
+
+	getStart() {
+		if (this.startDate !== "") {
+			return this.startDate;
+		} else {
+			return "2020-04-07";
+		}
+	},
 };

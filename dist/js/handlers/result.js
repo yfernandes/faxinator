@@ -1,3 +1,0 @@
-function generateResult() {}
-
-export { generateResult };

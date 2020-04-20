@@ -1,6 +1,9 @@
-var mockData = [
+var mockDataGS = [
+	// Index 0
 	[["Terça"], ["Sexta"]],
+	// Index 1
 	[["3/27/2019"]],
+	// Index 2
 	[
 		["Momô"],
 		["Piu-Piu"],
@@ -9,8 +12,9 @@ var mockData = [
 		["Naue"],
 		["Cecilia"],
 		["Sequela"],
-		["Sequela"]
+		["Sequela"],
 	],
+	// Index 3
 	[
 		["Cozinha", "7"],
 		["Sala", "1"],
@@ -18,9 +22,24 @@ var mockData = [
 		["Copa e Corredor", "2"],
 		["Banheiro Suite", "5"],
 		["Lavanderia", "3"],
-		["Area Externa", "4"]
-	]
+		["Area Externa", "4"],
+	],
 ];
+
+const mockData = {
+	tasks: [
+		{ lugar: "Cozinha", dificuldade: 7 },
+		{ lugar: "Banheiro Suite", dificuldade: 6 },
+		{ lugar: "Banheiro Social", dificuldade: 5 },
+		{ lugar: "Sala", dificuldade: 4 },
+		{ lugar: "Lavanderia", dificuldade: 3 },
+		{ lugar: "Varanda", dificuldade: 2 },
+		{ lugar: "Copa e Corredor", dificuldade: 1 },
+	],
+	members: ["Momô", "Piu-Piu", "Bento", "Vlad", "Naue", "Cecilia", "Sequela"],
+	frequency: ["Terça", "Sexta"],
+	startDate: "2020-04-08",
+};
 
 function orderTasks(tarefas, pessoas) {
 	tarefas.sort((a, b) => {
@@ -59,31 +78,6 @@ function orderTasks(tarefas, pessoas) {
 		}
 	}
 	return sortedTasks;
-}
-
-function parseData(gData) {
-	var result = {
-		diasFaxina: [],
-		primeiraFaxina: "",
-		pessoas: [],
-		tarefas: []
-	};
-
-	for (var i = 0; i < gData[0].length; i++) {
-		result.diasFaxina[i] = gData[0][i][0];
-	}
-
-	result.primeiraFaxina = gData[1][0][0];
-
-	for (var i = 0; i < gData[2].length; i++) {
-		result.pessoas[i] = gData[2][i][0];
-	}
-
-	for (var i = 0; i < gData[3].length; i++) {
-		result.tarefas[i] = { lugar: gData[3][i][0], dificuldade: gData[3][i][1] };
-	}
-	console.log(result);
-	// return result
 }
 
 function makeSheet(tarefas, datas, pessoas) {
@@ -181,7 +175,7 @@ function mergeTasks(tarefas) {
 		}
 		values.push(
 			tarefas.splice(
-				tarefas.findIndex(a => a.dificuldade == min),
+				tarefas.findIndex((a) => a.dificuldade == min),
 				1
 			)
 		);
@@ -189,7 +183,7 @@ function mergeTasks(tarefas) {
 
 	var newTask = {
 		lugar: values[0][0].lugar + " & " + values[1][0].lugar,
-		dificuldade: values[0][0].dificuldade + values[1][0].dificuldade
+		dificuldade: values[0][0].dificuldade + values[1][0].dificuldade,
 	};
 	tarefas.push(newTask);
 }
@@ -224,27 +218,13 @@ function dateToNumber(dia) {
 	}
 }
 
-function faxine(gData) {
-	let data = parseData(gData);
-	let orderedTasks = orderTasks(data.tarefas, data.pessoas);
-	console.log(data);
-	let days = calculateDays(data.primeiraFaxina, data.diasFaxina, orderedTasks);
-	let sheet = makeSheet(orderedTasks, days, data.pessoas);
+export default function faxinaComum(data) {
+	// let data = parseData(data);
+	let orderedTasks = orderTasks(data.tasks, data.members);
+	let days = calculateDays(data.startDate, data.frequency, orderedTasks);
+	let sheet = makeSheet(orderedTasks, days, data.members);
+
 	return sheet;
 }
 
-function main(dias, primeira, tarefas, pessoas) {
-	var x = faxine(dias, primeira, tarefas, pessoas);
-	return x;
-}
-
-module.exports = {
-	orderTasks: orderTasks,
-	addBreak: addBreak,
-	mergeTasks: mergeTasks,
-	dateToNumber: dateToNumber,
-	calculateDays: calculateDays,
-	makeSheet: makeSheet,
-	parseData: parseData,
-	faxine: faxine
-};
+// faxine(data);
