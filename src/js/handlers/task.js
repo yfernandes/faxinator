@@ -43,6 +43,7 @@ export default {
 
 		// Clear Input
 		this.taskNameInput.value = "";
+		this.taskNameDifficulty.value = "";
 	},
 
 	addTask(name, diff) {
@@ -144,6 +145,9 @@ export default {
 		} else {
 			tasks = JSON.parse(localStorage.getItem("tasks"));
 		}
+
+		// Convert stringified number to Number
+		tasks.forEach((elem) => [(elem.dificuldade = Number(elem.dificuldade))]);
 
 		return tasks;
 	},

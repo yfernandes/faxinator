@@ -1,5 +1,3 @@
-"use strict";
-
 export default {
 	defaultFrequency: [
 		{ weekDay: "Domingo", active: false },
@@ -24,11 +22,15 @@ export default {
 		this.startDate = this.dateInputEl.value;
 		// Load Local Storage Data
 		this.frequency = this.loadFrequencyFromLocalStorage();
+		this.startDate = this.loadStartDateFromLocalStorage();
 		// Reconciliate State and View
 		this.updateFrequencyDOM(this.frequency);
+		this.dateInputEl.value = this.startDate;
 		// Set Event Listeners
-		this.dateInputEl.addEventListener("change", this.dateInputHandler);
-		this.daysFrequencyEl.onclick = (e) => this.daysBtnHandler(e); // Buttons Event Listener
+		this.dateInputEl.addEventListener("change", (e) =>
+			this.dateInputHandler(e)
+		);
+		this.daysFrequencyEl.onclick = (e) => this.daysBtnHandler(e);
 	},
 
 	daysBtnHandler(e) {
@@ -51,6 +53,13 @@ export default {
 		this.storeFrequencyToLocalStorage(this.frequency);
 		// Update View State
 		this.updateFrequencyDOM(this.frequency);
+	},
+
+	dateInputHandler(e) {
+		e.preventDefault();
+		this.startDate = e.target.value;
+		console.log("Got to Date input, startDate: ", this.startDate);
+		this.storeStartDateToLocalStorage(e.target.value);
 	},
 
 	storeFrequencyToLocalStorage(frequency) {
@@ -94,10 +103,22 @@ export default {
 		}
 	},
 
-	dateInputHandler(e) {
-		e.preventDefault();
-		this.startDate = e.target.value;
-		console.log("Got to Date input, startDate: ", this.startDate);
+	loadStartDateFromLocalStorage() {
+		let date;
+
+		if (
+			localStorage.getItem("startDate") === null ||
+			localStorage.getItem("startDate") === ""
+		) {
+			date = "2020-04-01";
+		} else {
+			date = JSON.parse(localStorage.getItem("startDate"));
+		}
+		return date;
+	},
+
+	storeStartDateToLocalStorage(startDate) {
+		localStorage.setItem("startDate", JSON.stringify(startDate));
 	},
 
 	getFrequency() {

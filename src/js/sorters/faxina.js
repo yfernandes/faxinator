@@ -1,31 +1,6 @@
-var mockDataGS = [
-	// Index 0
-	[["Terça"], ["Sexta"]],
-	// Index 1
-	[["3/27/2019"]],
-	// Index 2
-	[
-		["Momô"],
-		["Piu-Piu"],
-		["Bento"],
-		["Vlad"],
-		["Naue"],
-		["Cecilia"],
-		["Sequela"],
-		["Sequela"],
-	],
-	// Index 3
-	[
-		["Cozinha", "7"],
-		["Sala", "1"],
-		["Banheiro Social", "6"],
-		["Copa e Corredor", "2"],
-		["Banheiro Suite", "5"],
-		["Lavanderia", "3"],
-		["Area Externa", "4"],
-	],
-];
+"use strict";
 
+/*
 const mockData = {
 	tasks: [
 		{ lugar: "Cozinha", dificuldade: 7 },
@@ -40,7 +15,7 @@ const mockData = {
 	frequency: ["Terça", "Sexta"],
 	startDate: "2020-04-08",
 };
-
+ */
 function orderTasks(tarefas, pessoas) {
 	tarefas.sort((a, b) => {
 		if (a.dificuldade > b.dificuldade) {
@@ -163,7 +138,7 @@ function addBreak(tarefas) {
 
 function mergeTasks(tarefas) {
 	var values = [];
-
+	// Find Min
 	for (var i = 0; i < 2; i++) {
 		var min;
 		for (var j = 0; j < tarefas.length; j++) {
@@ -219,7 +194,6 @@ function dateToNumber(dia) {
 }
 
 export default function faxinaComum(data) {
-	// let data = parseData(data);
 	let orderedTasks = orderTasks(data.tasks, data.members);
 	let days = calculateDays(data.startDate, data.frequency, orderedTasks);
 	let sheet = makeSheet(orderedTasks, days, data.members);

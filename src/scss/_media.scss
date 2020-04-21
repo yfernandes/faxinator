@@ -1,4 +1,16 @@
 @media screen and (max-width: 768px) {
+	.main {
+		width: 100%;
+		display: block;
+
+		.left,
+		.right {
+			width: 80%;
+
+			margin: auto;
+		}
+	}
+
 	.table {
 		display: block;
 	}
