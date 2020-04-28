@@ -6,9 +6,9 @@
 		background-color: $white-color;
 		height: 23rem;
 		width: 100%;
-		text-align: center;
 
 		.form-group {
+			text-align: center;
 			padding: 1rem;
 
 			label {
@@ -22,7 +22,19 @@
 		}
 
 		.task-list {
-			margin: 0 2rem;
+			.task-unique {
+				margin: 0 auto;
+				width: 65%;
+				display: flex;
+				justify-content: space-around;
+
+				.task-name {
+					flex-grow: 1;
+				}
+				.task-difficulty {
+					margin-right: 1rem;
+				}
+			}
 		}
 	}
 }

@@ -34,7 +34,7 @@ li {
 }
 
 .main {
-	width: $website-width;
+	max-width: $website-width;
 	margin: 1rem auto;
 	display: flex;
 	justify-content: space-between;

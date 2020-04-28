@@ -19,4 +19,14 @@
 			}
 		}
 	}
+
+	.members-list {
+		.member-unique {
+			margin: 0 auto;
+			width: 65%;
+			display: flex;
+			justify-content: space-between;
+		}
+		padding-bottom: 2rem;
+	}
 }

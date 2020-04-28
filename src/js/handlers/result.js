@@ -25,6 +25,8 @@ export default {
 				const cell = document.createElement("th");
 				cell.classList.add("cell");
 				cell.textContent = array[i];
+				row.classList.add("row");
+				row.classList.add("header");
 				row.appendChild(cell);
 			} else {
 				row.classList.add("row");
