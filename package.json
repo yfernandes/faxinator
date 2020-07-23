@@ -1,26 +1,22 @@
 {
-	"name": "faxinator",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"clean-dist": "rm -rf ./dist/",
-		"predev": "yarn clean-dist",
-		"prebuild": "yarn clean-dist",
-		"dev": "parcel ./src/pug/index.pug",
-		"build": "parcel build ./src/pug/index.pug --no-cache",
-		"sass": "node-sass src/scss/ -o dist/css",
-		"sass-watch": "node-sass -w src/scss/ -o dist/css --recursive",
-		"pug": "pug src/pug/*.pug --out dist -P",
-		"pug-watch": "pug src/pug/*.pug --out dist -P -w"
-	},
-	"keywords": [],
-	"author": "Yago Fernandes",
-	"license": "ISC",
-	"devDependencies": {
-		"node-sass": "^4.13.1",
-		"parcel-bundler": "^1.12.4",
-		"pug": "^2.0.4",
-		"typescript": "^3.8.3"
-	}
+  "name": "faxinator",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "@faxinator/eslint-config": "*",
+    "@types/jest": "^26.0.5",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
+  }
 }

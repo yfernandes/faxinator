@@ -1,7 +1,8 @@
 {
-	"liveServer.settings.port": 5501,
-	"liveServer.settings.root": "/dist",
 	"cSpell.words": [
 		"faxinator"
+	],
+	"cSpell.ignoreWords": [
+		"pmmmwh"
 	]
 }
