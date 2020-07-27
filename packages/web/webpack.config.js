@@ -25,7 +25,7 @@ module.exports = {
 		contentBase: path.join(__dirname, "public"),
 		historyApiFallback: true,
 		hot: true,
-		port: 4000
+		port: 3000
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
