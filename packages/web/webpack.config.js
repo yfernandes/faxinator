@@ -6,10 +6,10 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
 	mode: isDevelopment ? "development" : "production",
+	entry: path.resolve(__dirname, "src", "index.tsx"),
 	resolve: {
 		extensions: [".tsx", ".ts", ".js"]
 	},
-	entry: path.resolve(__dirname, "src", "index.tsx"),
 	module: {
 		rules: [
 			{
@@ -18,6 +18,10 @@ module.exports = {
 				use: {
 					loader: "babel-loader"
 				}
+			},
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"]
 			}
 		]
 	},
@@ -25,7 +29,8 @@ module.exports = {
 		contentBase: path.join(__dirname, "public"),
 		historyApiFallback: true,
 		hot: true,
-		port: 3000
+		port: 3000,
+		stats: "minimal" //'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose'
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
