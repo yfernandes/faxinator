@@ -1,10 +1,12 @@
+import styled from "styled-components";
+import { GlobalContainer } from "../../styles/GlobalComponents";
+
+export const Container = styled(GlobalContainer)``;
+
 /* // Members
 #members {
 	.members-container {
-		background-color: $white-color;
-		min-height: 20rem;
 
-		text-align: center;
 
 		.form-group {
 			padding: 1rem;

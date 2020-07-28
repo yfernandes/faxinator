@@ -1,3 +1,5 @@
+import styled from "styled-components";
+import { GlobalContainer, btnMain } from "../../styles/GlobalComponents";
 /*
 // Tasks
 #task {
