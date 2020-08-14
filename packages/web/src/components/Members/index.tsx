@@ -1,3 +1,15 @@
+import React from "react";
+
+import { Container } from "./styles";
+
+interface Props {}
+
+const Members = (props: Props) => {
+	return <Container> </Container>;
+};
+
+export default Members;
+
 /* PUG
 // Section: Members Input
 section#members
