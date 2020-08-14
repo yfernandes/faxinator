@@ -3,7 +3,6 @@ import { GlobalContainer, btnMain } from "../../styles/GlobalComponents";
 
 export const Container = styled(GlobalContainer)`
 	margin: 0 2rem;
-	height: 100%;
 
 	padding: 1.5rem;
 `;
@@ -26,14 +25,11 @@ export const WeekDays = styled.div`
 	justify-content: space-evenly;
 `;
 
-export const Button = styled(btnMain)`
-	height: 3rem;
-	padding: 0.5rem;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: space-between;
-	.day-btn {
-		width: 30%;
-	}
+interface ButtonProps {
+	active: boolean;
+}
+export const Button = styled(btnMain)<ButtonProps>`
+	margin: 0.5rem;
+	width: 10rem;
+	color: ${(props) => (props.active ? "red" : "black")};
 `;
