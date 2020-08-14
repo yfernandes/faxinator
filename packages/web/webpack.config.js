@@ -30,7 +30,8 @@ module.exports = {
 		historyApiFallback: true,
 		hot: true,
 		port: 3000,
-		stats: "minimal" //'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose'
+		stats: "minimal", //'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose'
+		clientLogLevel: "error"
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
