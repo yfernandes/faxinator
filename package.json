@@ -18,7 +18,7 @@
 	"author": "Yago Fernandes",
 	"license": "ISC",
 	"devDependencies": {
-		"node-sass": "^4.13.1",
+		"node-sass": "^7.0.0",
 		"parcel-bundler": "^1.12.4",
 		"pug": "^2.0.4",
 		"typescript": "^3.8.3"
